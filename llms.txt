@@ -1,0 +1,24 @@
+# Correlated Erasure Capacity
+
+This repository studies ordinary quantum communication through input-independent, flagged subset-erasure channels. Losses may be correlated within each finite block; blocks repeat independently. The sender has no realized-mask information, feedback, or preshared entanglement. Every elementary physical carrier is counted.
+
+Start with README.md for the question and principal results, and science/README.md for the connected reading route.
+
+## Authoritative routes
+
+- Channel definition, complementary channel, stochastic flags, coherent information, regularization, and overlap converse: science/model.md.
+- Exact additivity of the overlap-transport quantity and heterogeneous carrier dimensions: science/model.md.
+- Uniform-local-survival minimum and supremum, imported Sun–Jafar codes, exact random-star capacities, binary share accounting, and exact marginal adjustment: science/capacity-envelope.md.
+- Binary projective-plane code, complete one-qubit CSS stabilizer, line-local decoder, normal-vector flags, pairwise reduced-channel equality, and exact thinning capacity: science/geometry-and-loss.md.
+- Inherited results, current source comparisons, and literature-version limits: references/related-work.md and references/references.bib.
+- Reproduction commands, software dependencies, finite verification scope, and raw outputs: verification/README.md, verification/verify_geometry.py, and verification/results.json.
+
+## Essential distinctions
+
+The capacity envelope is a supremum over finite block sizes and mask laws. The exact minimum is attained by independent erasure. The overlap quantity is a general upper bound, not an asserted capacity formula for every law. Additivity of that bound does not assert additivity of quantum capacity.
+
+The geometric parameter q labels a finite field for the incidence structure; every physical site in those examples is still a single qubit. The separate Sun–Jafar construction uses larger shares, and all constituent qubits are charged.
+
+Uniform line selection, uniform-normal-vector selection, and thinned line selection are different channels. The exact thinning formula belongs to the last one. Pairwise local-channel equality retains only the chosen local flags; the complete flag record distinguishes the correlations.
+
+Use the topic pages for proofs and the references for attribution. The numerical checks cover stated finite cases and do not numerically determine general regularized quantum capacity.
