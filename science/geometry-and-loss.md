@@ -2,13 +2,13 @@
 
 Projective planes give explicit qubit channels for which the overlap converse is exact or asymptotically tight. This account uses the binary CSS code of Audoux and Couvreur [AC19, Section 4.1], including its logical operators on every line. The code is an inherited ingredient. The channel statements below apply it to stochastic loss and use the probability-sensitive converse in [the model and converse](model.md). Their relation to the universal marginal-survival law is explained in [the capacity envelope](capacity-envelope.md).
 
-All capacities are **unassisted quantum capacities in qubits per block**. The block has $n=q^2+q+1$ physical qubits, where $q=2^m$ and $m\geq1$. Different uses of the block channel are independent. The sender does not know the realized mask. The receiver gets the final retained subset and its qubits; no unobserved intermediate mask is supplied. See [the model](model.md) for the full operational conventions.
+All capacities are **unassisted quantum capacities in qubits per block**. The block has $`n=q^2+q+1`$ physical qubits, where $`q=2^m`$ and $`m\geq1`$. Different uses of the block channel are independent. The sender does not know the realized mask. The receiver gets the final retained subset and its qubits; no unobserved intermediate mask is supplied. See [the model](model.md) for the full operational conventions.
 
 Three different mask laws will be kept explicit:
 
 1. A uniformly selected projective line has capacity exactly one qubit per block.
-2. The zero set of a uniform normal vector has pairwise independent survival flags and capacity between $1$ and $1+2/q^2$.
-3. A uniformly selected line followed by independent thinning has capacity exactly $[2t^{q+1}-1]_+$, where $t$ is the additional retention probability and $[x]_+=\max\{x,0\}$.
+2. The zero set of a uniform normal vector has pairwise independent survival flags and capacity between $`1`$ and $`1+2/q^2`$.
+3. A uniformly selected line followed by independent thinning has capacity exactly $`[2t^{q+1}-1]_+`$, where $`t`$ is the additional retention probability and $`[x]_+=\max\{x,0\}`$.
 
 The third formula concerns the first channel with extra loss. It is not an exact-capacity formula for the second channel.
 
@@ -16,329 +16,329 @@ The third formula concerns the first channel with extra loss. It is not an exact
 
 ### Incidence geometry
 
-Let $V$ be the points of $\operatorname{PG}(2,q)$ and let $\mathcal L$ be its projective lines. Both sets have cardinality
+Let $`V`$ be the points of $`\mathrm{PG}(2,q)`$ and let $`\mathcal L`$ be its projective lines. Both sets have cardinality
 
-$$
+```math
 n=q^2+q+1.
-$$
+```
 
-Each line contains $q+1$ points, each point belongs to $q+1$ lines, and two distinct lines intersect in exactly one point. Associate a physical qubit with each point. Although the geometry is defined over $\mathbb F_q$, the code below is binary: every physical carrier is one qubit, including when $q>2$.
+Each line contains $`q+1`$ points, each point belongs to $`q+1`$ lines, and two distinct lines intersect in exactly one point. Associate a physical qubit with each point. Although the geometry is defined over $`\mathbb F_q`$, the code below is binary: every physical carrier is one qubit, including when $`q>2`$.
 
-Write $v_L\in\mathbb F_2^n$ for the incidence vector of a line $L$. Since $q$ is even,
+Write $`v_L\in\mathbb F_2^n`$ for the incidence vector of a line $`L`$. Since $`q`$ is even,
 
-$$
+```math
 v_L\cdot v_M=1\quad\text{in }\mathbb F_2
 \qquad\text{for every }L,M\in\mathcal L,
-$$
+```
 
-including $L=M$. Fix a reference line with vector $v_0$, and set
+including $`L=M`$. Fix a reference line with vector $`v_0`$, and set
 
-$$
-D=\operatorname{span}_{\mathbb F_2}\{v_L+v_0:L\in\mathcal L\},
+```math
+D=\mathrm{span}_{\mathbb F_2}\{v_L+v_0:L\in\mathcal L\},
 \qquad C=D\oplus\langle v_0\rangle.
-$$
+```
 
 The incidence identity implies
 
-$$
+```math
 D\subseteq D^\perp,
 \qquad v_0\in D^\perp,
 \qquad v_0\cdot v_0=1.
-$$
+```
 
-In particular, $v_0\notin D$. The space $C$ is the span of all line vectors. The space $D$ is its even-weight subcode: a sum of an even number of line vectors is a sum of differences $v_L+v_0$, whereas a sum of an odd number has odd weight. Thus $D=C_{\mathrm{planes}}$ and $C=C_{\mathrm{lines}}$ in [AC19, Proposition 4.7, Remark 4.8 and Definition 4.9]. This identifies the code used here with their one-qubit CSS code.
+In particular, $`v_0\notin D`$. The space $`C`$ is the span of all line vectors. The space $`D`$ is its even-weight subcode: a sum of an even number of line vectors is a sum of differences $`v_L+v_0`$, whereas a sum of an odd number has odd weight. Thus $`D=C_{\mathrm{planes}}`$ and $`C=C_{\mathrm{lines}}`$ in [AC19, Proposition 4.7, Remark 4.8 and Definition 4.9]. This identifies the code used here with their one-qubit CSS code.
 
 ### Pure encoder and complete stabilizer
 
-An explicit isometry from one logical qubit to the $n$ physical qubits is
+An explicit isometry from one logical qubit to the $`n`$ physical qubits is
 
-$$
+```math
 V_{\mathrm{enc}}|j\rangle
 =|j_L\rangle
 =\frac{1}{\sqrt{|D|}}\sum_{d\in D}|d+jv_0\rangle,
 \qquad j\in\{0,1\}.
-$$
+```
 
 The two cosets are disjoint, so the codewords are orthonormal. Let
 
-$$
+```math
 X(u)=\bigotimes_{i=1}^n X_i^{u_i},
 \qquad Z(w)=\bigotimes_{i=1}^n Z_i^{w_i}.
-$$
+```
 
-The **complete** stabilizer is generated by $X(d)$ for a basis of $D$ and $Z(w)$ for a basis of $C^\perp$. These generators commute because $D\subseteq C$. Their total number of independent generators is
+The **complete** stabilizer is generated by $`X(d)`$ for a basis of $`D`$ and $`Z(w)`$ for a basis of $`C^\perp`$. These generators commute because $`D\subseteq C`$. Their total number of independent generators is
 
-$$
+```math
 \dim D+\dim C^\perp
 =\dim D+n-(\dim D+1)
 =n-1.
-$$
+```
 
-Consequently this code has exactly one logical qubit. Using only $X(D)$ and $Z(D)$ would leave additional logical qubits for $q>2$; those extra degrees of freedom are not part of this encoder or any recovery claim here.
+Consequently this code has exactly one logical qubit. Using only $`X(D)`$ and $`Z(D)`$ would leave additional logical qubits for $`q>2`$; those extra degrees of freedom are not part of this encoder or any recovery claim here.
 
-The encoder also has a direct Clifford implementation. Prepare $\dim D$ qubits in $|+\rangle$, one input qubit, and the remaining qubits in $|0\rangle$. Extend a basis of $D$ together with $v_0$ to a basis of $\mathbb F_2^n$, and implement the resulting invertible binary linear map using CNOT and swap gates. All $n$ output qubits are counted as channel inputs.
+The encoder also has a direct Clifford implementation. Prepare $`\dim D`$ qubits in $`|+\rangle`$, one input qubit, and the remaining qubits in $`|0\rangle`$. Extend a basis of $`D`$ together with $`v_0`$ to a basis of $`\mathbb F_2^n`$, and implement the resulting invertible binary linear map using CNOT and swap gates. All $`n`$ output qubits are counted as channel inputs.
 
 ### Logical Pauli operators on every line
 
 The reference operators satisfy
 
-$$
+```math
 X(v_0)|j_L\rangle=|(j+1)_L\rangle,
 \qquad
 Z(v_0)|j_L\rangle=(-1)^j|j_L\rangle.
-$$
+```
 
-For any line $L$, the difference $v_L+v_0$ belongs to $D$. Both $X(v_L+v_0)$ and $Z(v_L+v_0)$ stabilize the code, since $D\subseteq C^\perp$. Therefore
+For any line $`L`$, the difference $`v_L+v_0`$ belongs to $`D`$. Both $`X(v_L+v_0)`$ and $`Z(v_L+v_0)`$ stabilize the code, since $`D\subseteq C^\perp`$. Therefore
 
-$$
+```math
 X(v_L)V_{\mathrm{enc}}=V_{\mathrm{enc}}X,
 \qquad
 Z(v_L)V_{\mathrm{enc}}=V_{\mathrm{enc}}Z.
-$$
+```
 
 Every line supports both logical Pauli operators and hence the full logical matrix algebra. These supports are precisely the inherited property established in [AC19, Lemma 4.11].
 
 ### Explicit decoder using the retained line alone
 
-Suppose the retained set is a complete line $L$, with $r=q+1$ qubits. Select a pivot qubit in $L$ and apply these two sequences of gates:
+Suppose the retained set is a complete line $`L`$, with $`r=q+1`$ qubits. Select a pivot qubit in $`L`$ and apply these two sequences of gates:
 
 1. For each other qubit, apply a CNOT from that qubit to the pivot.
 2. For each other qubit, apply a CNOT from the pivot to that qubit.
 
-This decoder uses $2q$ CNOTs, all within the retained line. To check it, let $M\in\operatorname{GL}(r,\mathbb F_2)$ be its action on computational-basis labels, with the pivot indexed first. Its first row is the all-ones vector and
+This decoder uses $`2q`$ CNOTs, all within the retained line. To check it, let $`M\in\mathrm{GL}(r,\mathbb F_2)`$ be its action on computational-basis labels, with the pivot indexed first. Its first row is the all-ones vector and
 
-$$
+```math
 M\mathbf 1=e_1,
 \qquad M^{-T}\mathbf 1=e_1.
-$$
+```
 
-The first identity uses the fact that $r$ is odd; the second follows from the first-row condition. Thus the decoder maps $X(\mathbf 1)$ and $Z(\mathbf 1)$ on the line to $X$ and $Z$ on the pivot. If its unitary is $U_L$, the full logical-algebra intertwining relation gives
+The first identity uses the fact that $`r`$ is odd; the second follows from the first-row condition. Thus the decoder maps $`X(\mathbf 1)`$ and $`Z(\mathbf 1)`$ on the line to $`X`$ and $`Z`$ on the pivot. If its unitary is $`U_L`$, the full logical-algebra intertwining relation gives
 
-$$
+```math
 (U_L\otimes I_{V\setminus L})V_{\mathrm{enc}}|\psi\rangle
 =|\psi\rangle_{\mathrm{pivot}}\otimes|\chi_L\rangle,
-$$
+```
 
-where $|\chi_L\rangle$ is independent of $|\psi\rangle$. This identity also holds with an arbitrary reference entangled with the input. Tracing out the other systems therefore recovers the unknown qubit exactly. The decoder does not require access to erased qubits.
+where $`|\chi_L\rangle`$ is independent of $`|\psi\rangle`$. This identity also holds with an arbitrary reference entangled with the input. Tracing out the other systems therefore recovers the unknown qubit exactly. The decoder does not require access to erased qubits.
 
 ## 2. Uniform-line channel: exact capacity one
 
-Let $F$ be the uniform law on $\mathcal L$. The code and decoder above give
+Let $`F`$ be the uniform law on $`\mathcal L`$. The code and decoder above give
 
-$$
+```math
 Q(\mathcal E_F)\geq1.
-$$
+```
 
-For the converse, couple two uniform lines by selecting an ordered pair of distinct lines with probability $1/[n(n-1)]$. Every pair intersects in one point. The overlap converse therefore gives $Q(\mathcal E_F)\leq1$, including arbitrary encoders over many independent blocks. Hence
+For the converse, couple two uniform lines by selecting an ordered pair of distinct lines with probability $`1/[n(n-1)]`$. Every pair intersects in one point. The overlap converse therefore gives $`Q(\mathcal E_F)\leq1`$, including arbitrary encoders over many independent blocks. Hence
 
-$$
+```math
 \boxed{Q(\mathcal E_F)=1.}
-$$
+```
 
-The single-qubit survival probability is $(q+1)/n$, and the capacity per physical qubit is $1/n$. The exact-storage recoverability is inherited from the code; the equality here concerns the ordinary stochastic channel. For the Fano plane, the corresponding exact-storage capacity is also covered by [SJ25, Theorem 5].
+The single-qubit survival probability is $`(q+1)/n`$, and the capacity per physical qubit is $`1/n`$. The exact-storage recoverability is inherited from the code; the equality here concerns the ordinary stochastic channel. For the Fano plane, the corresponding exact-storage capacity is also covered by [SJ25, Theorem 5].
 
 ## 3. Uniform normal vectors: pairwise independent loss
 
-Choose one nonzero representative $x\in\mathbb F_q^3$ for each projective point. Draw $a$ uniformly from all of $\mathbb F_q^3$ and retain
+Choose one nonzero representative $`x\in\mathbb F_q^3`$ for each projective point. Draw $`a`$ uniformly from all of $`\mathbb F_q^3`$ and retain
 
-$$
+```math
 S_a=\{x\in V:a\cdot x=0\}.
-$$
+```
 
-The condition is independent of the chosen representative. If $a=0$, the channel retains all $n$ qubits. Every nonzero $a$ retains a projective line. Each line has $q-1$ nonzero normal vectors, so, writing $p=q^{-3}$,
+The condition is independent of the chosen representative. If $`a=0`$, the channel retains all $`n`$ qubits. Every nonzero $`a`$ retains a projective line. Each line has $`q-1`$ nonzero normal vectors, so, writing $`p=q^{-3}`$,
 
-$$
+```math
 \mu_{\mathrm{nv}}(V)=p,
 \qquad
 \mu_{\mathrm{nv}}(L)=\frac{q-1}{q^3}
 =\frac{1-p}{n}
 \quad(L\in\mathcal L).
-$$
+```
 
 ### Local flags and reduced channels
 
-For a fixed projective point $x$, the linear functional $a\mapsto a\cdot x$ is uniform on $\mathbb F_q$. Two distinct projective points have linearly independent representatives, so the map
+For a fixed projective point $`x`$, the linear functional $`a\mapsto a\cdot x`$ is uniform on $`\mathbb F_q`$. Two distinct projective points have linearly independent representatives, so the map
 
-$$
+```math
 a\longmapsto(a\cdot x,a\cdot y)
-$$
+```
 
-is uniform on $\mathbb F_q^2$. Therefore
+is uniform on $`\mathbb F_q^2`$. Therefore
 
-$$
+```math
 \Pr(x\in S_a)=\alpha=\frac1q,
 \qquad
 \Pr(x,y\in S_a)=\frac1{q^2}=\alpha^2.
-$$
+```
 
-The two binary survival flags are exactly independent. Consequently, when all other quantum outputs and flags are discarded, the selected one- or two-qubit channel is exactly a product of ordinary erasure channels with survival $\alpha$. This is an equality of channel maps, including their action on entangled inputs and reference systems.
+The two binary survival flags are exactly independent. Consequently, when all other quantum outputs and flags are discarded, the selected one- or two-qubit channel is exactly a product of ordinary erasure channels with survival $`\alpha`$. This is an equality of channel maps, including their action on entangled inputs and reference systems.
 
-The full subset flag is available to the receiver and reveals the global structure. The equality above keeps **only the selected local flags**. It does not hold if the complete subset register is retained in the purported local comparison. Higher-order local measurements can also detect the correlations: three distinct collinear points jointly survive with probability $q^{-2}$, whereas iid survival would give $q^{-3}$. Three noncollinear points jointly survive with probability $q^{-3}$.
+The full subset flag is available to the receiver and reveals the global structure. The equality above keeps **only the selected local flags**. It does not hold if the complete subset register is retained in the purported local comparison. Higher-order local measurements can also detect the correlations: three distinct collinear points jointly survive with probability $`q^{-2}`$, whereas iid survival would give $`q^{-3}`$. Three noncollinear points jointly survive with probability $`q^{-3}`$.
 
 ### Capacity and the sharp overlap bound
 
-Every possible mask contains an authorized line. The decoder therefore sends one qubit perfectly per block, including the full-retention event. Thus $Q(\mathcal E_{\mu_{\mathrm{nv}}})\geq1$.
+Every possible mask contains an authorized line. The decoder therefore sends one qubit perfectly per block, including the full-retention event. Thus $`Q(\mathcal E_{\mu_{\mathrm{nv}}})\geq1`$.
 
 For an upper bound, define the following self-coupling on the full mask and lines:
 
-$$
+```math
 \pi(V,L)=\pi(L,V)=\frac{p}{n},
 \qquad
 \pi(L,M)=\frac{1-2p}{n(n-1)}\quad(L\ne M),
-$$
+```
 
-with every remaining entry zero. Its full-mask marginal is $p$, and every line marginal is
+with every remaining entry zero. Its full-mask marginal is $`p`$, and every line marginal is
 
-$$
+```math
 \frac{p}{n}+(n-1)\frac{1-2p}{n(n-1)}
 =\frac{1-p}{n}.
-$$
+```
 
-It is a nonnegative normalized coupling because $p\leq1/8$. Its cost is
+It is a nonnegative normalized coupling because $`p\leq1/8`$. Its cost is
 
-$$
+```math
 2p(q+1)+(1-2p)=1+\frac2{q^2}.
-$$
+```
 
-This is also the minimum overlap cost. Indeed, if an arbitrary coupling has full/full mass $z$, its full/line and line/full mass together is $2(p-z)$ and its line/line mass is $1-2p+z$. All line pairs intersect in at least one point, so the cost is at least
+This is also the minimum overlap cost. Indeed, if an arbitrary coupling has full/full mass $`z`$, its full/line and line/full mass together is $`2(p-z)`$ and its line/line mass is $`1-2p+z`$. All line pairs intersect in at least one point, so the cost is at least
 
-$$
+```math
 zn+2(p-z)(q+1)+(1-2p+z)
 =1+\frac2{q^2}+z(q^2-q).
-$$
+```
 
-The displayed coupling attains the lower bound with $z=0$. The resulting channel-capacity conclusion is
+The displayed coupling attains the lower bound with $`z=0`$. The resulting channel-capacity conclusion is
 
-$$
+```math
 \boxed{1\leq Q(\mathcal E_{\mu_{\mathrm{nv}}})\leq1+\frac2{q^2}.}
-$$
+```
 
 The minimum overlap cost is determined exactly; equality of quantum capacity with that upper bound is not established. The achievable normalized rate satisfies
 
-$$
+```math
 \frac{Q(\mathcal E_{\mu_{\mathrm{nv}}})}{n}
 \geq\frac1{q^2+q+1}
 =\frac{\alpha^2}{1+\alpha+\alpha^2}.
-$$
+```
 
-It approaches the universal $\alpha^2$ ceiling as $q=2^m\to\infty$. By contrast, iid erasure has zero unassisted quantum capacity for every $\alpha\leq1/2$ [BDS97]. The distinction comes from higher-order loss correlations; the local iid marginal statement does not make the whole block channel iid.
+It approaches the universal $`\alpha^2`$ ceiling as $`q=2^m\to\infty`$. By contrast, iid erasure has zero unassisted quantum capacity for every $`\alpha\leq1/2`$ [BDS97]. The distinction comes from higher-order loss correlations; the local iid marginal statement does not make the whole block channel iid.
 
 ## 4. Uniform-line channel followed by independent thinning
 
-Choose $L$ uniformly from $\mathcal L$, then retain each point of $L$ independently with probability $t\in[0,1]$. Only the resulting set $S$ and its qubits are returned. The final-mask law is
+Choose $`L`$ uniformly from $`\mathcal L`$, then retain each point of $`L`$ independently with probability $`t\in[0,1]`$. Only the resulting set $`S`$ and its qubits are returned. The final-mask law is
 
-$$
+```math
 \mu_t(S)=\frac1n\sum_{L\in\mathcal L:\,S\subseteq L}
 t^{|S|}(1-t)^{q+1-|S|}.
-$$
+```
 
-This formula aggregates all latent lines that produce the same observed mask. In particular, the empty mask can arise from any line and a singleton from $q+1$ lines. The channel is not supplied with an additional label identifying the originating line.
+This formula aggregates all latent lines that produce the same observed mask. In particular, the empty mask can arise from any line and a singleton from $`q+1`$ lines. The channel is not supplied with an additional label identifying the originating line.
 
 The exact capacity is
 
-$$
+```math
 \boxed{Q(\mathcal E_{\mu_t})=\bigl[2t^{q+1}-1\bigr]_+.}
-$$
+```
 
 ### Lower bound and privacy of proper subsets
 
-The probability of retaining the full selected line is $r=t^{q+1}$. These events are recognizable from the final mask because they have size $q+1$. All other masks have at most $q$ points.
+The probability of retaining the full selected line is $`r=t^{q+1}`$. These events are recognizable from the final mask because they have size $`q+1`$. All other masks have at most $`q`$ points.
 
-Every proper subset $S\subsetneq L$ is private for the encoded logical qubit. To see this, choose a missing point $x\in L\setminus S$ and a different line $M$ through $x$. Then $M\cap L=\{x\}$, so $M$ is disjoint from $S$. The encoder recovers perfectly from $M$, including entanglement with a reference. The complementary subsystem, and hence $S$, has a state independent of the input and no correlation with that reference. This is the exact information-disturbance implication of perfect recovery, not merely failure of a particular decoder.
+Every proper subset $`S\subsetneq L`$ is private for the encoded logical qubit. To see this, choose a missing point $`x\in L\setminus S`$ and a different line $`M`$ through $`x`$. Then $`M\cap L=\{x\}`$, so $`M`$ is disjoint from $`S`$. The encoder recovers perfectly from $`M`$, including entanglement with a reference. The complementary subsystem, and hence $`S`$, has a state independent of the input and no correlation with that reference. This is the exact information-disturbance implication of perfect recovery, not merely failure of a particular decoder.
 
-On complete-line masks, use the decoder from Section 1. On all other masks, output an orthogonal erasure symbol. The resulting logical channel is precisely the ordinary qubit erasure channel with survival $r$. Its quantum capacity is $[2r-1]_+$ [BDS97], proving the lower bound. All blocks, including erased blocks, are counted; no postselection is used.
+On complete-line masks, use the decoder from Section 1. On all other masks, output an orthogonal erasure symbol. The resulting logical channel is precisely the ordinary qubit erasure channel with survival $`r`$. Its quantum capacity is $`[2r-1]_+`$ [BDS97], proving the lower bound. All blocks, including erased blocks, are counted; no postselection is used.
 
 ### Normalized component laws
 
-For $0\leq k\leq q$, let $\mu_k$ be the law obtained by drawing a uniform line and then a uniform $k$-subset of that line. These are probability laws on observed masks, with latent representations summed. Define
+For $`0\leq k\leq q`$, let $`\mu_k`$ be the law obtained by drawing a uniform line and then a uniform $`k`$-subset of that line. These are probability laws on observed masks, with latent representations summed. Define
 
-$$
+```math
 w_k=\binom{q+1}{k}t^k(1-t)^{q+1-k}.
-$$
+```
 
-When $r<1$, set
+When $`r<1`$, set
 
-$$
+```math
 P_t=\sum_{k=0}^{q}\frac{w_k}{1-r}\,\mu_k.
-$$
+```
 
-The weights sum to one, and $\mu_t=rF+(1-r)P_t$. The endpoint $t=1$ is the uniform-line channel already solved above, so no conditional distribution with a zero denominator is needed.
+The weights sum to one, and $`\mu_t=rF+(1-r)P_t`$. The endpoint $`t=1`$ is the uniform-line channel already solved above, so no conditional distribution with a zero denominator is needed.
 
 ### Disjoint self-coupling of each proper-size law
 
-For fixed $0\leq k\leq q$, generate a pair $(S,T)$ as follows:
+For fixed $`0\leq k\leq q`$, generate a pair $`(S,T)`$ as follows:
 
-1. Choose $L$ uniformly and $S$ uniformly among its $\binom{q+1}{k}$ subsets of size $k$.
-2. Choose $x$ uniformly from the $q+1-k$ points of $L\setminus S$.
-3. Choose $M$ uniformly among the $q$ lines through $x$ other than $L$.
-4. Choose $T$ uniformly among the $\binom{q+1}{k}$ subsets of $M$ of size $k$.
+1. Choose $`L`$ uniformly and $`S`$ uniformly among its $`\binom{q+1}{k}`$ subsets of size $`k`$.
+2. Choose $`x`$ uniformly from the $`q+1-k`$ points of $`L\setminus S`$.
+3. Choose $`M`$ uniformly among the $`q`$ lines through $`x`$ other than $`L`$.
+4. Choose $`T`$ uniformly among the $`\binom{q+1}{k}`$ subsets of $`M`$ of size $`k`$.
 
-Every choice is normalized. Also $S\cap M=\varnothing$, hence $S\cap T=\varnothing$. Averaging the missing-point choice over the uniform $S$ makes $x$ uniform on $L$:
+Every choice is normalized. Also $`S\cap M=\varnothing`$, hence $`S\cap T=\varnothing`$. Averaging the missing-point choice over the uniform $`S`$ makes $`x`$ uniform on $`L`$:
 
-$$
+```math
 \Pr(x=y\mid L)
 =\frac{\binom qk}{\binom{q+1}k}\frac1{q+1-k}
 =\frac1{q+1}.
-$$
+```
 
-Thus $(L,M)$ is a uniform ordered pair of distinct lines, since $q(q+1)=n-1$. In particular $M$ is uniform, and $T$ has law $\mu_k$. This constructs a disjoint self-coupling of $\mu_k$. Mixing these couplings with weights $w_k/(1-r)$ gives a disjoint $P_t/P_t$ coupling.
+Thus $`(L,M)`$ is a uniform ordered pair of distinct lines, since $`q(q+1)=n-1`$. In particular $`M`$ is uniform, and $`T`$ has law $`\mu_k`$. This constructs a disjoint self-coupling of $`\mu_k`$. Mixing these couplings with weights $`w_k/(1-r)`$ gives a disjoint $`P_t/P_t`$ coupling.
 
-The construction includes $k=q$, when only one point of $L$ is missing. It also includes singleton and empty masks. Multiple latent representations of those masks do not change either marginal: the joint law is pushed forward to the actual pair $(S,T)$.
+The construction includes $`k=q`$, when only one point of $`L`$ is missing. It also includes singleton and empty masks. Multiple latent representations of those masks do not change either marginal: the joint law is pushed forward to the actual pair $`(S,T)`$.
 
 ### Disjoint coupling between full lines and proper subsets
 
-For the $F/\mu_k$ coupling, draw $L$ uniformly and $M$ uniformly among the other $n-1$ lines. Let $x=L\cap M$, and choose $T$ uniformly among the $\binom qk$ subsets of $M\setminus\{x\}$ of size $k$. The two output masks are $L$ and $T$, which are disjoint.
+For the $`F/\mu_k`$ coupling, draw $`L`$ uniformly and $`M`$ uniformly among the other $`n-1`$ lines. Let $`x=L\cap M`$, and choose $`T`$ uniformly among the $`\binom qk`$ subsets of $`M\setminus\{x\}`$ of size $`k`$. The two output masks are $`L`$ and $`T`$, which are disjoint.
 
-Conditional on $M$, the point $x$ is uniform on its $q+1$ points. For a specified $k$-subset $U\subseteq M$,
+Conditional on $`M`$, the point $`x`$ is uniform on its $`q+1`$ points. For a specified $`k`$-subset $`U\subseteq M`$,
 
-$$
+```math
 \Pr(T=U\mid M)
 =\frac{q+1-k}{(q+1)\binom qk}
 =\frac1{\binom{q+1}k}.
-$$
+```
 
-Therefore the second marginal is exactly $\mu_k$. Mixing over $k$ gives a disjoint $F/P_t$ coupling, and reversing its coordinates gives a disjoint $P_t/F$ coupling.
+Therefore the second marginal is exactly $`\mu_k`$. Mixing over $`k`$ gives a disjoint $`F/P_t`$ coupling, and reversing its coordinates gives a disjoint $`P_t/F`$ coupling.
 
 ### Assemble the capacity upper bound
 
-If $r\leq1/2$, mix the preceding couplings with weights
+If $`r\leq1/2`$, mix the preceding couplings with weights
 
-$$
+```math
 r\quad(F/P_t),\qquad
 r\quad(P_t/F),\qquad
 1-2r\quad(P_t/P_t).
-$$
+```
 
-The weights are nonnegative and sum to one. Each marginal is $rF+(1-r)P_t=\mu_t$, and every paired mask is disjoint. The overlap converse gives $Q\leq0$.
+The weights are nonnegative and sum to one. Each marginal is $`rF+(1-r)P_t=\mu_t`$, and every paired mask is disjoint. The overlap converse gives $`Q\leq0`$.
 
-If $1/2<r<1$, instead use weights
+If $`1/2<r<1`$, instead use weights
 
-$$
+```math
 1-r\quad(F/P_t),\qquad
 1-r\quad(P_t/F),\qquad
 2r-1\quad(F/F).
-$$
+```
 
-For the last component, select distinct uniform lines, with intersection size one. The first marginal has full-line weight $(1-r)+(2r-1)=r$ and proper-subset weight $1-r$; the second marginal is the same. The expected overlap is $2r-1$. The converse matches the lower bound and proves the formula for arbitrary multi-block codes.
+For the last component, select distinct uniform lines, with intersection size one. The first marginal has full-line weight $`(1-r)+(2r-1)=r`$ and proper-subset weight $`1-r`$; the second marginal is the same. The expected overlap is $`2r-1`$. The converse matches the lower bound and proves the formula for arbitrary multi-block codes.
 
 ### Additional-loss threshold
 
-Writing $\eta=1-t$, positive capacity holds exactly when
+Writing $`\eta=1-t`$, positive capacity holds exactly when
 
-$$
+```math
 \eta<\eta_c,
 \qquad
 \eta_c=1-2^{-1/(q+1)}
 =\frac{\ln2}{q+1}+O(q^{-2}).
-$$
+```
 
-Thus the perfect one-qubit transmission of a uniformly selected line is fragile to additional independent loss on the scale $1/q$. The capacity curve quantifies that fragility without changing the charged block size or supplying the original line to either party.
+Thus the perfect one-qubit transmission of a uniformly selected line is fragile to additional independent loss on the scale $`1/q`$. The capacity curve quantifies that fragility without changing the charged block size or supplying the original line to either party.
 
 ## 5. Reproducible finite checks
 
-[The verification script](../verification/verify_geometry.py) checks finite-field incidence, the full one-qubit stabilizer, logical supports, the decoder map, and normal-vector flag counts for $q=2,4,8,16$. For $q=2$, it also constructs the encoded Bell state, checks decoding on every line, and checks reference decoupling on every observed proper mask.
+[The verification script](../verification/verify_geometry.py) checks finite-field incidence, the full one-qubit stabilizer, logical supports, the decoder map, and normal-vector flag counts for $`q=2,4,8,16`$. For $`q=2`$, it also constructs the encoded Bell state, checks decoding on every line, and checks reference decoupling on every observed proper mask.
 
-A separate linear program constructs the observable thinned-mask distribution directly and minimizes overlap over all its self-couplings. It does not restrict the optimizer to the constructive couplings used in the proof. Small-field cases on both sides of the threshold test the predicted cost and report primal marginal residuals and dual feasibility. These finite checks address implementation and normalization errors; the arguments above establish the all-$q$ results. See [verification instructions and scope](../verification/README.md) and [recorded results](../verification/results.json).
+A separate linear program constructs the observable thinned-mask distribution directly and minimizes overlap over all its self-couplings. It does not restrict the optimizer to the constructive couplings used in the proof. Small-field cases on both sides of the threshold test the predicted cost and report primal marginal residuals and dual feasibility. These finite checks address implementation and normalization errors; the arguments above establish the all-$`q`$ results. See [verification instructions and scope](../verification/README.md) and [recorded results](../verification/results.json).
 
 ## References
 
