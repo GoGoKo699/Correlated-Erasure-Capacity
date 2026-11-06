@@ -8,57 +8,57 @@ One channel use accepts a block of physical qubits. A known, input-independent p
 
 The main derivation is a probability-sensitive capacity converse:
 
-$$
+```math
 Q(\mathcal E_\mu)
 \leq \inf_{\pi\in\Pi(\mu,\mu)}\mathbb E_\pi |S\cap T|
 \leq \sum_i\alpha_i^2,
 \qquad \alpha_i=\Pr_\mu(i\in S).
-$$
+```
 
-Here $\Pi(\mu,\mu)$ is the set of joint laws with both marginals equal to $\mu$. The entropy inequality underlying the converse is elementary; the step that matters for this operational question is retaining the mask probabilities and applying a product coupling to every number of channel uses, including entangled inputs. Combining that converse with existing exact-storage codes gives
+Here $`\Pi(\mu,\mu)`$ is the set of joint laws with both marginals equal to $`\mu`$. The entropy inequality underlying the converse is elementary; the step that matters for this operational question is retaining the mask probabilities and applying a product coupling to every number of channel uses, including entangled inputs. Combining that converse with existing exact-storage codes gives
 
-$$
+```math
 \sup_{n,\,\mu:\Pr(i\in S)=\alpha\ \forall i}
 \frac{Q(\mathcal E_\mu)}{n}=\alpha^2.
-$$
+```
 
 This is a supremum over block sizes and admissible correlations. It is not a formula for every individual mask law. The capacity equalities for uniform intersection stars and independently thinned projective lines are further applications of the same converse. The quantum codes that supply their lower bounds are attributed below.
 
 ## 2. Distributed storage: the closest coding antecedent
 
-**Sun and Jafar [SJ25]** give an intersection converse for exact distributed storage (Theorem 1), a classical secure-storage to quantum CSS construction (Theorem 2), a Fano result (Theorem 5), and intersection-graph codes (Theorem 6). Their Remark 1 explicitly describes a compound channel: an erasure pattern is selected once and held fixed across uses. Theorem 6 supplies the achieving codes used here. With $N=\binom{\Delta}{m}$ equal-size shares, the code stores $k=\binom{\Delta-2}{m-2}$ qudits recoverable from each star; the inherited ratio is $k/N=m(m-1)/[\Delta(\Delta-1)]$.
+**Sun and Jafar [SJ25]** give an intersection converse for exact distributed storage (Theorem 1), a classical secure-storage to quantum CSS construction (Theorem 2), a Fano result (Theorem 5), and intersection-graph codes (Theorem 6). Their Remark 1 explicitly describes a compound channel: an erasure pattern is selected once and held fixed across uses. Theorem 6 supplies the achieving codes used here. With $`N=\binom{\Delta}{m}`$ equal-size shares, the code stores $`k=\binom{\Delta-2}{m-2}`$ qudits recoverable from each star; the inherited ratio is $`k/N=m(m-1)/[\Delta(\Delta-1)]`$.
 
-The source's storage intersection argument and code design are substantive predecessors. This repository does not claim either as a new construction. Its stochastic converse permits different random masks at successive uses and codes that need not recover from every individual mask. For the uniform-star law, coupling two distinct stars bounds ordinary capacity by exactly the inherited code size. Taking growing $\Delta$, with $m/\Delta$ approaching a prescribed survival probability, then gives the matching extremal envelope. This changes the operational optimization while using the existing achievability machinery.
+The source's storage intersection argument and code design are substantive predecessors. This repository does not claim either as a new construction. Its stochastic converse permits different random masks at successive uses and codes that need not recover from every individual mask. For the uniform-star law, coupling two distinct stars bounds ordinary capacity by exactly the inherited code size. Taking growing $`\Delta`$, with $`m/\Delta`$ approaching a prescribed survival probability, then gives the matching extremal envelope. This changes the operational optimization while using the existing achievability machinery.
 
 ### Finite fields and physical-qubit accounting
 
-The [SJ25] construction works over a sufficiently large finite field, including fields of characteristic two. A $2^r$-dimensional share can therefore be represented by exactly $r$ qubits, all of which are counted in the input block and erased together. The normalization never treats an arbitrarily large share as a single physical qubit.
+The [SJ25] construction works over a sufficiently large finite field, including fields of characteristic two. A $`2^r`$-dimensional share can therefore be represented by exactly $`r`$ qubits, all of which are counted in the input block and erased together. The normalization never treats an arbitrarily large share as a single physical qubit.
 
 A minor algebraic detail in the inspected v1 proof deserves care. In Section 5.7, write
 
-$$
+```math
 k=\binom{\Delta-2}{m-2},\quad
 \delta=\binom{\Delta-2}{m-1},\quad
 d=k+\delta=\binom{\Delta-1}{m-1}.
-$$
+```
 
-The determinant product in Lemma 3 has total degree at most $d+\Delta\delta$. Substitution gives the sufficient choice
+The determinant product in Lemma 3 has total degree at most $`d+\Delta\delta`$. Substitution gives the sufficient choice
 
-$$
+```math
 q>\binom{\Delta-1}{m-1}+\Delta\binom{\Delta-2}{m-1}.
-$$
+```
 
-The displayed expansion of $(k+\delta)+\Delta\delta$ in that version instead uses $\binom{\Delta-2}{m-2}$ in its second term. The bound above follows directly from the determinant sizes and avoids relying on that expansion. The nonzero-minor assignments and the linear identities in Section 5.7.1 remain valid in characteristic two. Arbitrarily large binary extension fields are available, so this correction changes neither the code rate nor the envelope argument.
+The displayed expansion of $`(k+\delta)+\Delta\delta`$ in that version instead uses $`\binom{\Delta-2}{m-2}`$ in its second term. The bound above follows directly from the determinant sizes and avoids relying on that expansion. The nonzero-minor assignments and the linear identities in Section 5.7.1 remain valid in characteristic two. Arbitrarily large binary extension fields are available, so this correction changes neither the code rate nor the envelope argument.
 
 ## 3. Projective-plane codes are inherited
 
-**Audoux and Couvreur [AC19, Section 4.1]** give the binary one-qubit code used in the geometry account. For $q=2^s$, Proposition 4.7 and Remark 4.8 identify the even subcode of the line-incidence code; Definition 4.9 gives the CSS code; Lemma 4.11 supplies line-supported representatives of both logical operator types. Remark 4.10 identifies $q=2$ with the Steane code. Thus the code and its recovery from every complete line are prior ingredients, including for arbitrarily large powers of two.
+**Audoux and Couvreur [AC19, Section 4.1]** give the binary one-qubit code used in the geometry account. For $`q=2^s`$, Proposition 4.7 and Remark 4.8 identify the even subcode of the line-incidence code; Definition 4.9 gives the CSS code; Lemma 4.11 supplies line-supported representatives of both logical operator types. Remark 4.10 identifies $`q=2`$ with the Steane code. Thus the code and its recovery from every complete line are prior ingredients, including for arbitrarily large powers of two.
 
-The geometry account supplies an explicit decoder and studies three specified stochastic laws on this existing code: uniform lines, zeros of uniform normal vectors, and uniform lines followed by independent thinning. The final family has ordinary capacity $[2t^{q+1}-1]_+$ qubits per block. Its upper bound applies to all multi-block encoders, rather than only assessing this code's decoding success. The normal-vector construction has pairwise independent flags, but its capacity is bounded rather than evaluated exactly.
+The geometry account supplies an explicit decoder and studies three specified stochastic laws on this existing code: uniform lines, zeros of uniform normal vectors, and uniform lines followed by independent thinning. The final family has ordinary capacity $`[2t^{q+1}-1]_+`$ qubits per block. Its upper bound applies to all multi-block encoders, rather than only assessing this code's decoding success. The normal-vector construction has pairwise independent flags, but its capacity is bounded rather than evaluated exactly.
 
-**Song and Cao [SC26, Theorem 1]** provide a particularly close recent Fano comparison. An encoding of one $D$-dimensional system into seven $D$-dimensional sites with their specified Fano erasure-correction pattern exists exactly when $D$ is a power of two; they also analyze rigidity and stabilizer-state entanglement. Their current paper discusses fixed-code erasure performance. Its Fano recovery and dimension results must not be attributed to this repository. The random-mask capacity envelope here optimizes a different, probability-weighted communication problem.
+**Song and Cao [SC26, Theorem 1]** provide a particularly close recent Fano comparison. An encoding of one $`D`$-dimensional system into seven $`D`$-dimensional sites with their specified Fano erasure-correction pattern exists exactly when $`D`$ is a power of two; they also analyze rigidity and stabilizer-state entanglement. Their current paper discusses fixed-code erasure performance. Its Fano recovery and dimension results must not be attributed to this repository. The random-mask capacity envelope here optimizes a different, probability-weighted communication problem.
 
-The relation between recoverable subsets, privacy of their complements, and quantum codes is foundational quantum secret sharing [CGL99, G00]. Matroidal constructions and information-rate bounds also precede this project [SR10, S11]. These sources establish the broader setting; [AC19] is the direct source for the specific all-$q$ binary plane code used here.
+The relation between recoverable subsets, privacy of their complements, and quantum codes is foundational quantum secret sharing [CGL99, G00]. Matroidal constructions and information-rate bounds also precede this project [SR10, S11]. These sources establish the broader setting; [AC19] is the direct source for the specific all-$`q`$ binary plane code used here.
 
 ## 4. Approximate secret sharing and compound-channel capacity
 
