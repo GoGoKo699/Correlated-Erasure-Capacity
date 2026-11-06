@@ -59,6 +59,12 @@ $$
 
 The [geometry and loss account](science/geometry-and-loss.md) gives the full one-qubit CSS encoder, a decoder using $2q$ CNOTs on the retained line, the capacity proofs, and the normalized couplings. The thinning formula applies to uniform-line selection, not to the normal-vector mixture.
 
+## Learn the project
+
+The single educational anchor is **Michael A. Nielsen and Isaac L. Chuang, *Quantum Computation and Quantum Information*, 10th Anniversary Edition (Cambridge University Press, 2010)**. The [source bridge](learning/anchor-and-bridge.md) connects its treatment of channels, error correction, stabilizers, and entropy to this project's stochastic capacity arguments. It identifies the further research ingredients and explains how their assumptions enter the proofs.
+
+The [30-milestone map](learning/milestones.md) develops the background and then assembles the scientific argument, from individual erasures to the sharp rate envelope and its geometric examples. Each milestone gives an understanding target, earlier dependencies, conceptual connections, and source pointers. Start with the [learning route](learning/README.md), or use the direct scientific routes below to inspect a particular result.
+
 ## Read and reproduce
 
 - [Scientific reading route](science/README.md): the question, model, proof dependencies, and physical interpretation.
