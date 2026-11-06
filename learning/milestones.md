@@ -55,7 +55,7 @@ The allocation reflects the need to connect information-theoretic and code-based
 
 **Central question:** What does the channel reveal when a specified collection of carriers is erased?
 
-**Understanding target:** Read the subset-erasure map $\mathcal E_\mu(\rho)=\bigoplus_S\mu(S)\rho_S$. Distinguish the quantum state on retained coordinates from the classical mask specifying those coordinates. Explain input-independent mask selection and why the complementary channel also receives the flag.
+**Understanding target:** Read the subset-erasure map $`\mathcal E_\mu(\rho)=\bigoplus_S\mu(S)\rho_S`$. Distinguish the quantum state on retained coordinates from the classical mask specifying those coordinates. Explain input-independent mask selection and why the complementary channel also receives the flag.
 
 **Dependencies and story role:** [M01](#m01), [M02](#m02). Fixes the local physical operation before comparing different laws of loss.
 
@@ -71,7 +71,7 @@ The allocation reflects the need to connect information-theoretic and code-based
 
 **Central question:** Which features of a loss process are determined by individual survival probabilities?
 
-**Understanding target:** Distinguish the one-site probabilities $\alpha_i$, pairwise independence, and the full law $\mu$ of a mask. Separate unrestricted correlations inside a block from independent repetitions of the whole block. Recognize that several different joint laws can share the same local statistics.
+**Understanding target:** Distinguish the one-site probabilities $`\alpha_i`$, pairwise independence, and the full law $`\mu`$ of a mask. Separate unrestricted correlations inside a block from independent repetitions of the whole block. Recognize that several different joint laws can share the same local statistics.
 
 **Dependencies and story role:** [M03](#m03). Identifies the statistical freedom over which the capacity envelope is optimized.
 
@@ -103,7 +103,7 @@ The allocation reflects the need to connect information-theoretic and code-based
 
 **Central question:** How is the information in a flagged quantum output divided between its classical and quantum parts?
 
-**Understanding target:** Use the von Neumann entropy bound $H(A_U)\le\sum_{i\in U}\log_2d_i$ and the entropy formula for orthogonal flagged branches. Explain why a maximally mixed qubit contributes one bit of entropy and why the same flag entropy appears at both channel outputs.
+**Understanding target:** Use the von Neumann entropy bound $`H(A_U)\le\sum_{i\in U}\log_2d_i`$ and the entropy formula for orthogonal flagged branches. Explain why a maximally mixed qubit contributes one bit of entropy and why the same flag entropy appears at both channel outputs.
 
 **Dependencies and story role:** [M01](#m01), [M02](#m02), [M03](#m03). Connects the physical input budget to the entropic quantities used in the proof.
 
@@ -119,7 +119,7 @@ The allocation reflects the need to connect information-theoretic and code-based
 
 **Central question:** Which entropy constraints remain valid for arbitrary correlations among several quantum subsystems?
 
-**Understanding target:** Explain subadditivity and strong subadditivity, and obtain weak monotonicity from strong subadditivity using a purification. Identify the usable form $H(JL)+H(KL)\ge H(J)+H(K)$ without assuming that $J,K,L$ are independent.
+**Understanding target:** Explain subadditivity and strong subadditivity, and obtain weak monotonicity from strong subadditivity using a purification. Identify the usable form $`H(JL)+H(KL)\ge H(J)+H(K)`$ without assuming that $`J,K,L`$ are independent.
 
 **Dependencies and story role:** [M01](#m01), [M06](#m06). Supplies the inequality that controls the parts of two masks outside their intersection.
 
@@ -135,7 +135,7 @@ The allocation reflects the need to connect information-theoretic and code-based
 
 **Central question:** How does an entropy difference become an operational statement about quantum transmission?
 
-**Understanding target:** Interpret coherent information as $I_c=H(B)-H(E)$ for a purified channel input. Explain the maximization over inputs and the regularization over arbitrarily many channel uses in the quantum-capacity theorem. Distinguish one-input coherent information, an achievable rate, and a capacity converse.
+**Understanding target:** Interpret coherent information as $`I_c=H(B)-H(E)`$ for a purified channel input. Explain the maximization over inputs and the regularization over arbitrarily many channel uses in the quantum-capacity theorem. Distinguish one-input coherent information, an achievable rate, and a capacity converse.
 
 **Dependencies and story role:** [M02](#m02), [M05](#m05), [M06](#m06), [M07](#m07). States the research-level theorem needed to pass from entropy estimates to all allowed asymptotic codes.
 
@@ -183,7 +183,7 @@ The allocation reflects the need to connect information-theoretic and code-based
 
 **Central question:** How do finite-field points and lines organize which physical qubits are retained together?
 
-**Understanding target:** Interpret points of $\operatorname{PG}(2,q)$ as one-dimensional subspaces of $\mathbb F_q^3$, and lines as kernels of nonzero linear functionals. Explain the counts $n=q^2+q+1$, line size $q+1$, and one-point intersection of distinct lines. Separate the field used to label the geometry from the Hilbert-space dimension of a physical carrier.
+**Understanding target:** Interpret points of $`\mathrm{PG}(2,q)`$ as one-dimensional subspaces of $`\mathbb F_q^3`$, and lines as kernels of nonzero linear functionals. Explain the counts $`n=q^2+q+1`$, line size $`q+1`$, and one-point intersection of distinct lines. Separate the field used to label the geometry from the Hilbert-space dimension of a physical carrier.
 
 **Dependencies and story role:** [M04](#m04), [M10](#m10). Adds the combinatorial setting needed to turn logical supports into explicit correlated-loss channels.
 
@@ -217,7 +217,7 @@ The allocation reflects the need to connect information-theoretic and code-based
 
 **Central question:** Why is coherent information an average of retained-versus-erased subsystem entropies?
 
-**Understanding target:** Derive $I_c(\rho,\mathcal E_\mu)=\sum_S\mu(S)[H(\rho_S)-H(\rho_{S^c})]$ from the two flagged outputs. Track the cancellation of $H(\mu)$ and preserve the distinction between a distribution over masks and an assumption about the input state.
+**Understanding target:** Derive $`I_c(\rho,\mathcal E_\mu)=\sum_S\mu(S)[H(\rho_S)-H(\rho_{S^c})]`$ from the two flagged outputs. Track the cancellation of $`H(\mu)`$ and preserve the distinction between a distribution over masks and an assumption about the input state.
 
 **Dependencies and story role:** [M03](#m03), [M06](#m06), [M08](#m08), [M12](#m12). Begins the argument with its exact single-block information quantity.
 
@@ -233,7 +233,7 @@ The allocation reflects the need to connect information-theoretic and code-based
 
 **Central question:** Why can two retained-versus-erased entropy differences be bounded by their common retained subsystem?
 
-**Understanding target:** Partition the carriers into $S\cap T$, $S\setminus T$, $T\setminus S$, and $(S\cup T)^c$. Combine subadditivity with weak monotonicity to obtain the bound by $2H(\rho_{S\cap T})$, explaining why it holds for every input and requires no exact decoder for either set.
+**Understanding target:** Partition the carriers into $`S\cap T`$, $`S\setminus T`$, $`T\setminus S`$, and $`(S\cup T)^c`$. Combine subadditivity with weak monotonicity to obtain the bound by $`2H(\rho_{S\cap T})`$, explaining why it holds for every input and requires no exact decoder for either set.
 
 **Dependencies and story role:** [M07](#m07), [M13](#m13). Isolates the entropy mechanism that makes a stochastic converse possible.
 
@@ -249,7 +249,7 @@ The allocation reflects the need to connect information-theoretic and code-based
 
 **Central question:** How can two mask draws be paired without changing either channel marginal?
 
-**Understanding target:** Define a self-coupling $\pi\in\Pi(\mu,\mu)$ and the weighted cost $C_\cap(\mu;w)=\min_\pi\mathbb E_\pi\sum_{i\in S\cap T}\log_2d_i$. Explain the marginal constraints, the entropy-to-dimension step, and why minimizing a finite transport problem sharpens the upper bound.
+**Understanding target:** Define a self-coupling $`\pi\in\Pi(\mu,\mu)`$ and the weighted cost $`C_\cap(\mu;w)=\min_\pi\mathbb E_\pi\sum_{i\in S\cap T}\log_2d_i`$. Explain the marginal constraints, the entropy-to-dimension step, and why minimizing a finite transport problem sharpens the upper bound.
 
 **Dependencies and story role:** [M04](#m04), [M06](#m06), [M14](#m14). Turns the two-set inequality into a probability-sensitive optimization.
 
@@ -265,7 +265,7 @@ The allocation reflects the need to connect information-theoretic and code-based
 
 **Central question:** Why can entangling inputs across more channel uses not defeat the overlap bound?
 
-**Understanding target:** Apply a product self-coupling to an arbitrary many-block input and use the intersection dimension bound to obtain $I_c\le kC_\cap$. Explain how regularization gives $Q\le C_\cap$. Prove that the transport cost itself is additive by projecting any joint coupling onto its block pairs, while keeping that statement separate from additivity of quantum capacity.
+**Understanding target:** Apply a product self-coupling to an arbitrary many-block input and use the intersection dimension bound to obtain $`I_c\le kC_\cap`$. Explain how regularization gives $`Q\le C_\cap`$. Prove that the transport cost itself is additive by projecting any joint coupling onto its block pairs, while keeping that statement separate from additivity of quantum capacity.
 
 **Dependencies and story role:** [M08](#m08), [M15](#m15). Completes the universal operational converse before any channel-specific code is considered.
 
@@ -281,7 +281,7 @@ The allocation reflects the need to connect information-theoretic and code-based
 
 **Central question:** What can a common survival probability alone guarantee or rule out?
 
-**Understanding target:** Obtain $Q/n\le\alpha^2$ from independent draws in the comparison coupling and $Q/n\ge(2\alpha-1)_+$ from the maximally mixed input. Explain why the first use of independence concerns the coupling, whereas independent physical erasures attain the lower extreme. Keep the common-marginal assumption distinct from knowing only an average survival probability.
+**Understanding target:** Obtain $`Q/n\le\alpha^2`$ from independent draws in the comparison coupling and $`Q/n\ge(2\alpha-1)_+`$ from the maximally mixed input. Explain why the first use of independence concerns the coupling, whereas independent physical erasures attain the lower extreme. Keep the common-marginal assumption distinct from knowing only an average survival probability.
 
 **Dependencies and story role:** [M06](#m06), [M13](#m13), [M16](#m16). Identifies both universal edges of the interval that the constructions must address.
 
@@ -297,7 +297,7 @@ The allocation reflects the need to connect information-theoretic and code-based
 
 **Central question:** Which exact storage construction can approach the quadratic upper ceiling?
 
-**Understanding target:** Describe nodes labelled by $m$-subsets of $[\Delta]$ and stars $D_a=\{J:a\in J\}$. State the imported Sun–Jafar recovery theorem with $N=\binom\Delta m$ physical field systems and $K=\binom{\Delta-2}{m-2}$ logical systems. Identify the sufficiently large binary extension field as a genuine construction dependency.
+**Understanding target:** Describe nodes labelled by $`m`$-subsets of $`[\Delta]`$ and stars $`D_a=\{J:a\in J\}`$. State the imported Sun–Jafar recovery theorem with $`N=\binom\Delta m`$ physical field systems and $`K=\binom{\Delta-2}{m-2}`$ logical systems. Identify the sufficiently large binary extension field as a genuine construction dependency.
 
 **Dependencies and story role:** [M10](#m10), [M11](#m11), [M12](#m12), [M17](#m17). Introduces the achieving family and its precise imported assumptions.
 
@@ -313,7 +313,7 @@ The allocation reflects the need to connect information-theoretic and code-based
 
 **Central question:** Why does the exact storage rate also equal the ordinary stochastic-channel capacity for this law?
 
-**Understanding target:** Combine the inherited perfect decoder with a self-coupling of distinct uniform stars. Use $|D_a\cap D_b|=K$ to match the converse to $K\log_2q$ logical qubits per block and interpret the normalized rate $m(m-1)/[\Delta(\Delta-1)]$.
+**Understanding target:** Combine the inherited perfect decoder with a self-coupling of distinct uniform stars. Use $`|D_a\cap D_b|=K`$ to match the converse to $`K\log_2q`$ logical qubits per block and interpret the normalized rate $`m(m-1)/[\Delta(\Delta-1)]`$.
 
 **Dependencies and story role:** [M15](#m15), [M16](#m16), [M18](#m18). Provides an exact family of capacities before taking an extremal limit.
 
@@ -329,7 +329,7 @@ The allocation reflects the need to connect information-theoretic and code-based
 
 **Central question:** How does a field-symbol construction become a valid qubit channel at any desired marginal survival?
 
-**Understanding target:** Convert each $q=2^r$ dimensional node into exactly $r$ physical qubits, counting all $Nr$ inputs. For $\alpha_0=m/\Delta\le\alpha$ with $\alpha_0<1$, retain each previously erased whole node independently with probability $(\alpha-\alpha_0)/(1-\alpha_0)$. Explain why the final mask alone contains enough information to locate a complete authorized star and recover without the latent original index.
+**Understanding target:** Convert each $`q=2^r`$ dimensional node into exactly $`r`$ physical qubits, counting all $`Nr`$ inputs. For $`\alpha_0=m/\Delta\le\alpha`$ with $`\alpha_0<1`$, retain each previously erased whole node independently with probability $`(\alpha-\alpha_0)/(1-\alpha_0)`$. Explain why the final mask alone contains enough information to locate a complete authorized star and recover without the latent original index.
 
 **Dependencies and story role:** [M03](#m03), [M05](#m05), [M18](#m18), [M19](#m19). Closes the dimension and exact-marginal gaps in the achieving construction.
 
@@ -343,9 +343,9 @@ The allocation reflects the need to connect information-theoretic and code-based
 
 **Phase:** Narrative/innovation.
 
-**Central question:** What does the equality of the supremal rate with $\alpha^2$ mean for finite physical channels?
+**Central question:** What does the equality of the supremal rate with $`\alpha^2`$ mean for finite physical channels?
 
-**Understanding target:** Combine the universal bound with $m=\lfloor\alpha\Delta\rfloor$ and growing finite constructions to obtain $F_+(\alpha)=\alpha^2$ for every $\alpha\in[0,1]$. State the quantifiers: for every accuracy in rate there is a finite block with an exact code approaching the ceiling. Integrate this with $F_-(\alpha)=(2\alpha-1)_+$ without asserting finite-size attainment or an efficient construction.
+**Understanding target:** Combine the universal bound with $`m=\lfloor\alpha\Delta\rfloor`$ and growing finite constructions to obtain $`F_+(\alpha)=\alpha^2`$ for every $`\alpha\in[0,1]`$. State the quantifiers: for every accuracy in rate there is a finite block with an exact code approaching the ceiling. Integrate this with $`F_-(\alpha)=(2\alpha-1)_+`$ without asserting finite-size attainment or an efficient construction.
 
 **Dependencies and story role:** [M17](#m17), [M19](#m19), [M20](#m20). Synthesizes the first main branch: the sharp range of possible capacities at fixed marginals.
 
@@ -361,7 +361,7 @@ The allocation reflects the need to connect information-theoretic and code-based
 
 **Central question:** How do projective lines define the specific one-qubit code used by the geometric channels?
 
-**Understanding target:** For $q=2^m$ with $m\ge1$, construct the line-difference space $D$ and $C=D\oplus\langle v_0\rangle$. Interpret the two coset-superposition codewords and the complete stabilizer $X(D),Z(C^\perp)$. Explain the count of $n-1$ independent stabilizers and why using $X(D),Z(D)$ alone would leave extra logical degrees of freedom for $q>2$.
+**Understanding target:** For $`q=2^m`$ with $`m\ge1`$, construct the line-difference space $`D`$ and $`C=D\oplus\langle v_0\rangle`$. Interpret the two coset-superposition codewords and the complete stabilizer $`X(D),Z(C^\perp)`$. Explain the count of $`n-1`$ independent stabilizers and why using $`X(D),Z(D)`$ alone would leave extra logical degrees of freedom for $`q>2`$.
 
 **Dependencies and story role:** [M09](#m09), [M10](#m10), [M11](#m11), [M12](#m12). Starts the second construction branch with its full physical encoding specified.
 
@@ -377,7 +377,7 @@ The allocation reflects the need to connect information-theoretic and code-based
 
 **Central question:** Why can any complete projective line recover the entire logical qubit?
 
-**Understanding target:** Show that every line supports representatives of both logical Pauli operators. Explain the two sequences of CNOTs, using $2q$ gates within the retained line, and the role of its odd size $q+1$. Connect the transformed logical algebra to factorization of the recovered pivot qubit from an input-independent remainder, including a reference.
+**Understanding target:** Show that every line supports representatives of both logical Pauli operators. Explain the two sequences of CNOTs, using $`2q`$ gates within the retained line, and the role of its odd size $`q+1`$. Connect the transformed logical algebra to factorization of the recovered pivot qubit from an input-independent remainder, including a reference.
 
 **Dependencies and story role:** [M09](#m09), [M10](#m10), [M22](#m22). Makes exact recovery constructive rather than relying only on an access-set label.
 
@@ -393,7 +393,7 @@ The allocation reflects the need to connect information-theoretic and code-based
 
 **Central question:** Why is the uniform-line channel completely characterized by one logical qubit per block?
 
-**Understanding target:** Match the exact line decoder with a coupling of distinct uniform lines whose intersection contains one qubit. Obtain $Q=1$, physical block size $n=q^2+q+1$, marginal survival $(q+1)/n$, and normalized rate $1/n$. Distinguish this ordinary-channel equality from the inherited exact-storage statement.
+**Understanding target:** Match the exact line decoder with a coupling of distinct uniform lines whose intersection contains one qubit. Obtain $`Q=1`$, physical block size $`n=q^2+q+1`$, marginal survival $`(q+1)/n`$, and normalized rate $`1/n`$. Distinguish this ordinary-channel equality from the inherited exact-storage statement.
 
 **Dependencies and story role:** [M16](#m16), [M22](#m22), [M23](#m23). Applies the common converse to the smaller binary geometric construction.
 
@@ -409,7 +409,7 @@ The allocation reflects the need to connect information-theoretic and code-based
 
 **Central question:** How can correlated erasures have exactly the same one- and two-carrier channels as independent loss?
 
-**Understanding target:** Analyze a uniform $a\in\mathbb F_q^3$ and retain points satisfying $a\cdot x=0$, including the full-retention event $a=0$. Obtain survival $1/q$ and pair survival $1/q^2$. Explain equality of the selected local channel maps, including reference inputs, only after every unselected quantum output and flag is discarded.
+**Understanding target:** Analyze a uniform $`a\in\mathbb F_q^3`$ and retain points satisfying $`a\cdot x=0`$, including the full-retention event $`a=0`$. Obtain survival $`1/q`$ and pair survival $`1/q^2`$. Explain equality of the selected local channel maps, including reference inputs, only after every unselected quantum output and flag is discarded.
 
 **Dependencies and story role:** [M01](#m01), [M03](#m03), [M04](#m04), [M11](#m11), [M23](#m23), [M24](#m24). Defines a distinct mask law that isolates what local diagnostics can miss.
 
@@ -425,7 +425,7 @@ The allocation reflects the need to connect information-theoretic and code-based
 
 **Central question:** How much capacity can remain when all one- and two-carrier loss diagnostics agree with a zero-capacity independent channel?
 
-**Understanding target:** Explain $1\le Q\le1+2/q^2$ for the normal-vector channel, with the upper number an exactly solved transport cost rather than an established exact capacity. Relate the achievable rate $1/(q^2+q+1)$ to the $\alpha^2$ ceiling along $\alpha=1/q$, and identify collinear triple statistics or the full mask as witnesses of the global correlation.
+**Understanding target:** Explain $`1\le Q\le1+2/q^2`$ for the normal-vector channel, with the upper number an exactly solved transport cost rather than an established exact capacity. Relate the achievable rate $`1/(q^2+q+1)`$ to the $`\alpha^2`$ ceiling along $`\alpha=1/q`$, and identify collinear triple statistics or the full mask as witnesses of the global correlation.
 
 **Dependencies and story role:** [M15](#m15), [M17](#m17), [M21](#m21), [M23](#m23), [M25](#m25). Connects the local-channel example to the extremal law and its precise remaining uncertainty.
 
@@ -441,7 +441,7 @@ The allocation reflects the need to connect information-theoretic and code-based
 
 **Central question:** What effective channel does the plane code produce when the selected line is thinned?
 
-**Understanding target:** Specify uniform line selection followed by independent retention $t$ on that line, with only the final mask observed. Explain the full-line probability $r=t^{q+1}$, privacy of every proper retained subset, and the decoder producing an ordinary logical erasure channel. Obtain the lower rate $[2r-1]_+$ with all failed blocks counted.
+**Understanding target:** Specify uniform line selection followed by independent retention $`t`$ on that line, with only the final mask observed. Explain the full-line probability $`r=t^{q+1}`$, privacy of every proper retained subset, and the decoder producing an ordinary logical erasure channel. Obtain the lower rate $`[2r-1]_+`$ with all failed blocks counted.
 
 **Dependencies and story role:** [M03](#m03), [M08](#m08), [M09](#m09), [M23](#m23), [M24](#m24). Introduces a controlled perturbation of the uniform-line law and its achievable capacity curve.
 
@@ -457,7 +457,7 @@ The allocation reflects the need to connect information-theoretic and code-based
 
 **Central question:** How can the thinning law be coupled disjointly without revealing its unobserved originating line?
 
-**Understanding target:** Express the proper-mask law as a mixture of the uniform-size laws $\mu_k$. Understand the disjoint proper/proper and full-line/proper couplings, including why their marginals remain correct. Track the aggregation of empty and singleton masks with multiple latent line representations.
+**Understanding target:** Express the proper-mask law as a mixture of the uniform-size laws $`\mu_k`$. Understand the disjoint proper/proper and full-line/proper couplings, including why their marginals remain correct. Track the aggregation of empty and singleton masks with multiple latent line representations.
 
 **Dependencies and story role:** [M04](#m04), [M11](#m11), [M15](#m15), [M27](#m27). Supplies the probability-preserving constructions needed for a sharp thinning converse.
 
@@ -473,7 +473,7 @@ The allocation reflects the need to connect information-theoretic and code-based
 
 **Central question:** Why is the code-induced lower bound optimal even among arbitrary encoders?
 
-**Understanding target:** Assemble the component couplings separately for $r\le1/2$ and $r>1/2$, giving overlap costs zero and $2r-1$. Match the converse to $Q=[2t^{q+1}-1]_+$ and, writing $\eta=1-t$, interpret the additional-loss threshold $\eta_c=1-2^{-1/(q+1)}$. Keep this exact curve attached to the thinned uniform-line channel, distinct from the normal-vector law.
+**Understanding target:** Assemble the component couplings separately for $`r\le1/2`$ and $`r>1/2`$, giving overlap costs zero and $`2r-1`$. Match the converse to $`Q=[2t^{q+1}-1]_+`$ and, writing $`\eta=1-t`$, interpret the additional-loss threshold $`\eta_c=1-2^{-1/(q+1)}`$. Keep this exact curve attached to the thinned uniform-line channel, distinct from the normal-vector law.
 
 **Dependencies and story role:** [M16](#m16), [M26](#m26), [M27](#m27), [M28](#m28). Completes the second exact capacity family and quantifies the fragility of line recovery.
 
