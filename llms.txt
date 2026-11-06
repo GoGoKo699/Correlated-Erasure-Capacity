@@ -13,6 +13,18 @@ Start with README.md for the question and principal results, and science/README.
 - Inherited results, current source comparisons, and literature-version limits: references/related-work.md and references/references.bib.
 - Reproduction commands, software dependencies, finite verification scope, and raw outputs: verification/README.md, verification/verify_geometry.py, and verification/results.json.
 
+## Learning and reader routes
+
+The single educational anchor is Nielsen and Chuang, Quantum Computation and Quantum Information, 10th Anniversary Edition (Cambridge University Press, 2010).
+
+- Start self-directed study with learning/README.md. Use learning/anchor-and-bridge.md for the verified textbook sections, translated notation, and steps connecting the foundations to this project's results.
+- Follow learning/milestones.md for exactly M01–M30, the project-defined background and scientific narrative. Each milestone supplies an understanding target, prior dependencies, conceptual connection, and scientific pointers.
+- To understand the whole argument, read science/README.md, then model.md, capacity-envelope.md, and geometry-and-loss.md in science/.
+- To inspect a theorem, use its authoritative topic page and references/related-work.md for the inherited ingredients and comparison scope.
+- To reproduce a finite check, follow verification/README.md and distinguish a new execution from the recorded results.
+
+The educational anchor supplies foundations. The regularized capacity theorem and the specific storage and geometric codes retain their primary research citations. The source bridge identifies the additional derivations supplied here. The milestone map is a common route through the scientific account.
+
 ## Essential distinctions
 
 The capacity envelope is a supremum over finite block sizes and mask laws. The exact minimum is attained by independent erasure. The overlap quantity is a general upper bound, not an asserted capacity formula for every law. Additivity of that bound does not assert additivity of quantum capacity.
