@@ -361,7 +361,7 @@ The allocation reflects the need to connect information-theoretic and code-based
 
 **Central question:** How do projective lines define the specific one-qubit code used by the geometric channels?
 
-**Understanding target:** For $`q=2^m`$ with $`m\ge1`$, construct the line-difference space $`D`$ and $`C=D\oplus\langle v_0\rangle`$. Interpret the two coset-superposition codewords and the complete stabilizer $`X(D),Z(C^\perp)`$. Explain the count of $`n-1`$ independent stabilizers and why using $`X(D),Z(D)`$ alone would leave extra logical degrees of freedom for $`q>2`$.
+**Understanding target:** For $`q=2^m`$ with $`m\ge1`$, construct the line-difference space $`D`$ and $`C=D\oplus\langle v_0\rangle`$. Interpret the two coset-superposition codewords and the complete stabilizer $`X(D),Z(C^\bot)`$. Explain the count of $`n-1`$ independent stabilizers and why using $`X(D),Z(D)`$ alone would leave extra logical degrees of freedom for $`q>2`$.
 
 **Dependencies and story role:** [M09](#m09), [M10](#m10), [M11](#m11), [M12](#m12). Starts the second construction branch with its full physical encoding specified.
 
@@ -487,15 +487,17 @@ The allocation reflects the need to connect information-theoretic and code-based
 
 **Phase:** Narrative/innovation.
 
-**Central question:** What complete account of correlated erasure is supported by the converse and its matching constructions?
+**Central question:** How do the overlap converse and exact recovery combine when both erasures and installed hardware constrain the available output?
 
 **Understanding target:** Connect the sharp marginal-capacity extremes, the exact star and line capacities, the local-diagnostic separation, and the exact thinning curve in one resource-consistent account. Identify the imported code and coding-theorem dependencies, the distinction between transport cost and capacity, and what analytical proofs establish beyond finite verification. Preserve the limits concerning independent block repetitions, finite-size attainment, and the unresolved exact normal-vector capacity.
+
+As a final application, set $`q=2`$ and install four one-edge line matchings on distinct lines. Derive the complete acceptance probability $`4/7`$ before thinning and the filtered capacity $`1/7`$. Explain why the coupling must use the masks after the hardware filter, and why extraction needs a separate post-erasure gate budget.
 
 **Dependencies and story role:** [M21](#m21), [M24](#m24), [M26](#m26), [M29](#m29). Closes the narrative phase by integrating the results, their mechanisms, and their limits.
 
 **Conceptual connection:** Joint loss structure determines which quantum information can be recovered; entropy and overlap quantify the universal restrictions, and explicit codes show when those restrictions are sharp.
 
-**Source pointers:** [N&C Chapters 8–12][nc]; [Science overview](../science/README.md); [Envelope §7](../science/capacity-envelope.md#7-what-the-extremal-statement-establishes); [Geometry §§2–5](../science/geometry-and-loss.md#2-uniform-line-channel-exact-capacity-one); [Verification scope](../verification/README.md#relation-to-the-proofs); [Attribution and source limits](../references/related-work.md); [Anchor bridge §4](anchor-and-bridge.md#4-the-additional-steps-supplied-by-this-project).
+**Source pointers:** [N&C Chapters 8–12][nc]; [Science overview](../science/README.md); [Envelope §7](../science/capacity-envelope.md#7-what-the-extremal-statement-establishes); [Geometry §§2–5](../science/geometry-and-loss.md#2-uniform-line-channel-exact-capacity-one); [Joint recovery and capacity](../science/projective-line-recovery.md); [Verification scope](../verification/README.md#relation-to-the-proofs); [Attribution and source limits](../references/related-work.md); [Anchor bridge §4](anchor-and-bridge.md#4-the-additional-steps-supplied-by-this-project).
 
 ## Source key
 

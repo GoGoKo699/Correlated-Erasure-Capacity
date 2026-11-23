@@ -10,6 +10,7 @@ Start with README.md for the question and principal results, and science/README.
 - Exact additivity of the overlap-transport quantity and heterogeneous carrier dimensions: science/model.md.
 - Uniform-local-survival minimum and supremum, imported Sun–Jafar codes, exact random-star capacities, binary share accounting, and exact marginal adjustment: science/capacity-envelope.md.
 - Binary projective-plane code, complete one-qubit CSS stabilizer, line-local decoder, normal-vector flags, pairwise reduced-channel equality, and exact thinning capacity: science/geometry-and-loss.md.
+- Exact recovery costs on surviving hardware, optimal installed coupler counts, and capacity after explicit rejection of unserved masks: science/projective-line-recovery.md.
 - Inherited results, current source comparisons, and literature-version limits: references/related-work.md and references/references.bib.
 - Reproduction commands, software dependencies, finite verification scope, and raw outputs: verification/README.md, verification/verify_geometry.py, and verification/results.json.
 
