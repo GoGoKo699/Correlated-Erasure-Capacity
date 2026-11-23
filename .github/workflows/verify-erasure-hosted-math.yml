@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     env:
-      CAPTURE_REVISION: b9cfa825d09894a9fcf60298529befd6faf2288c
+      CAPTURE_REVISION: 6672ba28cb963a1482584bf64d73aca26f2945f8
       PROBE_PAGE: science/projective-line-recovery.md
     steps:
       - name: Check out the pinned science source
