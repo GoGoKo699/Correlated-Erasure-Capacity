@@ -105,7 +105,7 @@ Suppose the retained set is a complete line $`L`$, with $`r=q+1`$ qubits. Select
 1. For each other qubit, apply a CNOT from that qubit to the pivot.
 2. For each other qubit, apply a CNOT from the pivot to that qubit.
 
-This decoder uses $`2q`$ CNOTs, all within the retained line. To check it, let $`M\in\mathrm{GL}(r,\mathbb F_2)`$ be its action on computational-basis labels, with the pivot indexed first. Its first row is the all-ones vector and
+This coherent decoder uses $`2q`$ CNOTs, all within the retained line. To check it, let $`M\in\mathrm{GL}(r,\mathbb F_2)`$ be its action on computational-basis labels, with the pivot indexed first. Its first row is the all-ones vector and
 
 ```math
 M\mathbf 1=e_1,
@@ -119,7 +119,7 @@ The first identity uses the fact that $`r`$ is odd; the second follows from the 
 =|\psi\rangle_{\mathrm{pivot}}\otimes|\chi_L\rangle,
 ```
 
-where $`|\chi_L\rangle`$ is independent of $`|\psi\rangle`$. This identity also holds with an arbitrary reference entangled with the input. Tracing out the other systems therefore recovers the unknown qubit exactly. The decoder does not require access to erased qubits.
+where $`|\chi_L\rangle`$ is independent of $`|\psi\rangle`$. This identity also holds with an arbitrary reference entangled with the input. Tracing out the other systems therefore recovers the unknown qubit exactly. The decoder does not require access to erased qubits. When single-qubit measurements and feedforward are available, the [joint recovery proof](projective-line-recovery.md#exact-extraction-from-a-known-line) gives the optimal CNOT count and determines which sparse coupler graphs suffice.
 
 ## 2. Uniform-line channel: exact capacity one
 
@@ -333,6 +333,8 @@ Writing $`\eta=1-t`$, positive capacity holds exactly when
 ```
 
 Thus the perfect one-qubit transmission of a uniformly selected line is fragile to additional independent loss on the scale $`1/q`$. The capacity curve quantifies that fragility without changing the charged block size or supplying the original line to either party.
+
+The [filtered-channel extension](projective-line-recovery.md#exact-capacity-with-an-explicit-mask-filter) keeps only complete lines that can be decoded within a post-erasure CNOT budget. Its survival probability includes both the thinning and the fraction of lines served by the hardware.
 
 ## 5. Reproducible finite checks
 

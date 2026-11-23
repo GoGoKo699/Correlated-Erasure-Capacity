@@ -22,7 +22,11 @@ The limiting construction separates two questions: the capacity of a fixed finit
 
 The normal-vector example explains why one- and two-site channel summaries cannot fix global quantum capacity. The thinning example explains the fragility of one concrete high-loss construction: higher-order structure supports communication, and additional ordinary loss can remove it at an exactly calculable threshold. This is a family-specific conclusion.
 
-## 4. Check dependencies and calculations
+## 4. Charge for recovery on hardware
+
+[Recovery cost and capacity for filtered projective-line erasures](projective-line-recovery.md) links the complete-line CSS decoder to the companion compiler's exact CNOT cost. At the minimum budget of $`q/2`$ CNOTs, one matching per accepted line gives the optimal number of served lines for a given number of installed couplers. Explicitly erasing rejected outputs gives a filtered channel whose exact capacity follows from a self-coupling of accepted lines and empty masks.
+
+## 5. Check dependencies and calculations
 
 [Related work](../references/related-work.md) separates the inherited storage bounds, code constructions, and compound-channel results from the stochastic capacity statements. [Verification](../verification/README.md) gives the executable finite checks and their scope. The general theorems rely on the analytical proofs and the explicitly cited construction dependency, not on extrapolating numerical data.
 

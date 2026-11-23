@@ -59,6 +59,18 @@ For the thinned uniform-line law, additional independent loss with probability $
 
 The [geometry and loss account](science/geometry-and-loss.md) gives the full one-qubit CSS encoder, a decoder using $`2q`$ CNOTs on the retained line, the capacity proofs, and the normalized couplings. The thinning formula applies to uniform-line selection, not to the normal-vector mixture.
 
+## Recovery on an installed coupler graph
+
+If erased sites are unavailable and the receiver can select the output site from the surviving line, the minimum possible recovery cost is $`q/2`$ CNOTs. A line meets this cap exactly when its internal couplers contain a matching covering all but one point. Because every pair of projective points lies on a unique line, $`H`$ installed unit-cost couplers can serve at most $`m(H)=\min\{q^2+q+1,\lfloor 2H/q\rfloor\}`$ lines, and a matching on each chosen line attains this count.
+
+For a uniform line followed by independent retention $`t`$, suppose the receiver keeps every accepted full line and replaces all other masks with a flagged erasure. The resulting filtered physical channel has exact unassisted capacity
+
+```math
+Q_H(t)=\left[2t^{q+1}\frac{m(H)}{q^2+q+1}-1\right]_+
+```
+
+in qubits per physical block, optimized over installed coupler graphs with at most $`H`$ edges. In the unthinned seven-qubit Fano example, four couplers first give positive capacity, $`1/7`$ qubit per block, and seven couplers serve every line. The [joint proof](science/projective-line-recovery.md) gives the exact extraction cost, matching construction, and all-encoder converse for this filter. See the [companion compiler benchmark](https://github.com/GoGoKo699/Quantum-Erasure-Recovery-Compiler/blob/main/science/benchmarks.md#projective-line-recovery) for circuit and compiler details.
+
 ## Learn the project
 
 The single educational anchor is **Michael A. Nielsen and Isaac L. Chuang, *Quantum Computation and Quantum Information*, 10th Anniversary Edition (Cambridge University Press, 2010)**. The [source bridge](learning/anchor-and-bridge.md) connects its treatment of channels, error correction, stabilizers, and entropy to this project's stochastic capacity arguments. It identifies the further research ingredients and explains how their assumptions enter the proofs.

@@ -38,6 +38,18 @@ All seven q = 2 decoded Bell fidelities were 0.9999999999999997 in floating-poin
 
 The q = 2 and q = 4 normal-vector LP costs agree with the bounds 1.5 and 1.125, respectively. Those are exact overlap-cost predictions; the script does not identify them with exact quantum capacities.
 
+## Projective-line recovery and the filtered channel
+
+Run the [projective-line verifier](verify_projective_line_recovery.py) from the repository root:
+
+```bash
+python verification/verify_projective_line_recovery.py
+```
+
+It reuses the projective incidence construction above. Over all 2,097,152 Fano hardware graphs it compares the parity edge-subset dynamic program with shortest-path terminal matching for 49 line and output choices. On survivor-induced graphs it checks every line at the one-CNOT cap and confirms that the maximum number of recoverable lines equals the smaller of seven and the installed edge count.
+
+The script also checks the Pauli action of the complete-graph recovery circuits for field orders 2, 4 and 8, and verifies both marginals and the overlap cost of the [filtered mask couplings](../science/projective-line-recovery.md#exact-capacity-with-an-explicit-mask-filter) in rational arithmetic. For a smaller run that skips exhaustive graph enumeration, pass `--skip-exhaustive-graphs`.
+
 ## Relation to the proofs
 
 [Geometry and loss](../science/geometry-and-loss.md) contains the general algebraic arguments, explicit normalized couplings, and the inherited-code attribution. The finite checks target normalization errors, hidden use of a latent-line label, surplus logical degrees of freedom, and incorrect transport costs. They do not establish the all-field theorems, certify literature novelty, or numerically compute unrestricted quantum capacity.

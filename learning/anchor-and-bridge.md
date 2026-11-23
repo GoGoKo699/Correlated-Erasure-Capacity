@@ -196,6 +196,12 @@ Q(\mathcal E_{\mu_t})=[2t^{q+1}-1]_+.
 
 Recognizing a code's logical erasure behavior alone would establish only the lower bound. The [normalized coupling proof](../science/geometry-and-loss.md#4-uniform-line-channel-followed-by-independent-thinning) is what proves optimality, including zero capacity beyond the loss threshold. This family-specific fragility does not establish a universal fragility law for every channel approaching the envelope.
 
+### 4.8 Follow a retained line through the hardware
+
+The CNOT and stabilizer tools from **N&C §§4.3 and 10.5** also describe the logical information left on a complete line. The two Choi generators restrict to anticommuting Pauli operators at every line point. The [companion compiler theorem](https://github.com/GoGoKo699/Quantum-Erasure-Recovery-Compiler/blob/b960d290edd538ce18b7b0ecd04efddea4907539/science/theorem.md) turns that local anticommutation into an exact graph-parity cost. At the smallest budget the circuit pairs $`q`$ of the surviving points, uses one CNOT on each pair, and uses single-qubit measurements to fix the output Pauli frame at the unmatched point.
+
+The [joint proof](../science/projective-line-recovery.md) then counts how many such pairings can be installed. One coupler helps only its own projective line when erased sites are unavailable. Rejecting all masks other than the feasible full lines gives an explicit physical flag law. Apply the overlap method again to that law and use the ordinary erasure formula for the decoder's achievable rate. At $`q=2`$, four installed couplers give four acceptable lines out of seven and hence capacity $`1/7`$ at full retention.
+
 ## 5. Reading routes
 
 For the full conceptual story, use [M01–M12](milestones.md) to assemble the physical systems, flags, entropy tools, and coding framework, then [M13–M30](milestones.md) to connect the converse, achieving sequence, geometric examples, and their physical meaning. The map has exactly 30 project-defined targets; this bridge explains the connections between them rather than defining another sequence.

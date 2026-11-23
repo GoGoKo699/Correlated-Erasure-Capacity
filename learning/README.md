@@ -8,7 +8,7 @@ The single educational anchor is **Michael A. Nielsen and Isaac L. Chuang, *Quan
 
 The **12 background/preliminaries milestones, M01–M12**, move from individual quantum systems to the complete communication task: subsystems, erasure flags, preservation of a reference, entropy inequalities, coding, and physical-resource accounting. Their final synthesis identifies precisely what is fixed, what is optimized, and what counts as successful transmission.
 
-The **18 narrative/innovation milestones, M13–M30**, connect the two-mask inequality to a regularized capacity converse, determine the extremal interval, and explain the imported codes that approach its upper endpoint. The geometric examples then separate exact recovery, pairwise local agreement, and fragility under additional loss. The final synthesis brings the claims, limitations, source dependencies, and finite verification together.
+The **18 narrative/innovation milestones, M13–M30**, connect the two-mask inequality to a regularized capacity converse, determine the extremal interval, and explain the imported codes that approach its upper endpoint. The geometric examples then separate exact recovery, pairwise local agreement, and fragility under additional loss. The final synthesis extends the thinned-line example to a budget on installed couplers and links its hardware calculation to a new filtered mask law.
 
 This allocation follows the project's argument: a compact quantum-information foundation supports a longer chain linking entropy, mask probabilities, coding constructions, and physical interpretation. The map records central questions, understanding targets, dependencies, conceptual connections, and source pointers. Detailed lemmas and complete proofs remain in their scientific topic pages.
 
@@ -20,6 +20,7 @@ This allocation follows the project's argument: a compact quantum-information fo
 | Translate textbook foundations into the present model | [Section map and notation](anchor-and-bridge.md#2-the-route-from-the-textbook-to-this-project) | [The missing connections](anchor-and-bridge.md#4-the-additional-steps-supplied-by-this-project) |
 | Inspect the main converse and its quantifiers | [Model and overlap converse](../science/model.md) | [Exact extremal capacities](../science/capacity-envelope.md) |
 | Understand an explicit encoder and loss threshold | [Projective geometry and additional loss](../science/geometry-and-loss.md) | [Verification guide](../verification/README.md) |
+| Determine when hardware can recover a retained line | [Projective-line recovery](../science/projective-line-recovery.md) | [Milestone M30](milestones.md#m30) |
 | Check attribution and imported results | [Related work](../references/related-work.md) | [Structured bibliography](../references/references.bib) |
 
 The textbook's channel, fidelity, CSS/stabilizer, and entropy sections supply the foundation. The bridge explicitly supplements them with Devetak's regularized coding theorem and the Sun–Jafar and Audoux–Couvreur constructions. These papers are research dependencies within the same route.
