@@ -1,0 +1,65 @@
+name: Verify pinned sister rendering
+on:
+  push:
+    branches:
+      - merlin/verify-erasure-hosted-math-20261123
+      - merlin/verify-erasure-sisters-20261123
+    paths:
+      - '.github/workflows/verify-erasure-hosted-math.yml'
+permissions:
+  contents: read
+jobs:
+  capture:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      CAPTURE_REVISION: fcfdc7400bc526c4ca100e7e7d1d18182a2aeed9
+      PROBE_PAGE: science/projective-line-recovery.md
+    steps:
+      - name: Check out the pinned science source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ env.CAPTURE_REVISION }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Prepare the public pinned capture runtime
+        run: |
+          mkdir -p "$RUNNER_TEMP/collector"
+          source="https://raw.githubusercontent.com/GoGoKo699/Quantum-Memory-Calibration/213dcbf5013bf7ea63f796e6288ef24963281b23/verification/hosted_math"
+          curl --fail --silent --show-error "$source/capture_hosted_math.cjs" -o "$RUNNER_TEMP/collector/capture_hosted_math.cjs"
+          curl --fail --silent --show-error "$source/check_rendered_math.py" -o "$RUNNER_TEMP/collector/check_rendered_math.py"
+          curl --fail --silent --show-error "$source/probe_hosted_math.cjs" -o "$RUNNER_TEMP/collector/probe_hosted_math.cjs"
+          test "$(git hash-object "$RUNNER_TEMP/collector/capture_hosted_math.cjs")" = d650de78b0bce00d1abf99cadfb66af1a2e80358
+          test "$(git hash-object "$RUNNER_TEMP/collector/check_rendered_math.py")" = 1d3bf9810d0dfadb844a48b354af80f9b66924bc
+          test "$(git hash-object "$RUNNER_TEMP/collector/probe_hosted_math.cjs")" = f83ea9da799bee0b53bd5c57315ae2b4b2d9de43
+          npm install --prefix "$RUNNER_TEMP/math-runtime" playwright@1.56.1 mathjax-full@3.2.1
+          node "$RUNNER_TEMP/math-runtime/node_modules/playwright/cli.js" install --with-deps chromium
+      - name: Check representative mathematics on both viewports
+        run: |
+          export NODE_PATH="$RUNNER_TEMP/math-runtime/node_modules"
+          node "$RUNNER_TEMP/collector/probe_hosted_math.cjs" \
+            --root "$GITHUB_WORKSPACE" \
+            --repository "$GITHUB_REPOSITORY" \
+            --revision "$CAPTURE_REVISION" \
+            --page "$PROBE_PAGE" \
+            --output "$RUNNER_TEMP/hosted-probe"
+      - name: Check both viewports on every pinned reader page
+        run: |
+          export NODE_PATH="$RUNNER_TEMP/math-runtime/node_modules"
+          node "$RUNNER_TEMP/collector/capture_hosted_math.cjs" \
+            --root "$GITHUB_WORKSPACE" \
+            --repository "$GITHUB_REPOSITORY" \
+            --revision "$CAPTURE_REVISION" \
+            --output "$RUNNER_TEMP/hosted-math"
+      - name: Save actual observations
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: sister-hosted-math-${{ env.CAPTURE_REVISION }}
+          path: |
+            ${{ runner.temp }}/hosted-probe
+            ${{ runner.temp }}/hosted-math
+          if-no-files-found: error
+          retention-days: 14
