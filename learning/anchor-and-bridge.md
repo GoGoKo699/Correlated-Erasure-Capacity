@@ -180,7 +180,7 @@ The [capacity envelope](../science/capacity-envelope.md) owns these quantifiers 
 
 ### 4.7 Read the geometric examples through the CSS framework
 
-**Audoux–Couvreur [AC19, Section 4.1]** supplies the binary plane code and its logical representatives on every line. In the repository's notation, the nested binary spaces are $`D\subseteq C`$, with $`\dim C-\dim D=1`$. The complete stabilizer uses $`X`$ operators indexed by $`D`$ and $`Z`$ operators indexed by $`C^\perp`$. It has $`n-1`$ independent generators and therefore encodes exactly one qubit. Using only $`X(D)`$ and $`Z(D)`$ would leave extra logical degrees of freedom in the larger planes.
+**Audoux–Couvreur [AC19, Section 4.1]** supplies the binary plane code and its logical representatives on every line. In the repository's notation, the nested binary spaces are $`D\subseteq C`$, with $`\dim C-\dim D=1`$. The complete stabilizer uses $`X`$ operators indexed by $`D`$ and $`Z`$ operators indexed by $`C^\bot`$. It has $`n-1`$ independent generators and therefore encodes exactly one qubit. Using only $`X(D)`$ and $`Z(D)`$ would leave extra logical degrees of freedom in the larger planes.
 
 Each line supports representatives of both logical Pauli operators. Recovering both complementary observables gives access to the full logical qubit, including its phase coherence. The [geometry account](../science/geometry-and-loss.md#1-the-inherited-one-qubit-css-code) turns this algebra into an explicit decoder with $`2q`$ CNOTs on the retained line.
 

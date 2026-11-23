@@ -361,7 +361,7 @@ The allocation reflects the need to connect information-theoretic and code-based
 
 **Central question:** How do projective lines define the specific one-qubit code used by the geometric channels?
 
-**Understanding target:** For $`q=2^m`$ with $`m\ge1`$, construct the line-difference space $`D`$ and $`C=D\oplus\langle v_0\rangle`$. Interpret the two coset-superposition codewords and the complete stabilizer $`X(D),Z(C^\perp)`$. Explain the count of $`n-1`$ independent stabilizers and why using $`X(D),Z(D)`$ alone would leave extra logical degrees of freedom for $`q>2`$.
+**Understanding target:** For $`q=2^m`$ with $`m\ge1`$, construct the line-difference space $`D`$ and $`C=D\oplus\langle v_0\rangle`$. Interpret the two coset-superposition codewords and the complete stabilizer $`X(D),Z(C^\bot)`$. Explain the count of $`n-1`$ independent stabilizers and why using $`X(D),Z(D)`$ alone would leave extra logical degrees of freedom for $`q>2`$.
 
 **Dependencies and story role:** [M09](#m09), [M10](#m10), [M11](#m11), [M12](#m12). Starts the second construction branch with its full physical encoding specified.
 
