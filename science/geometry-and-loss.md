@@ -311,7 +311,7 @@ r\quad(P_t/F),\qquad
 
 The weights are nonnegative and sum to one. Each marginal is $`rF+(1-r)P_t=\mu_t`$, and every paired mask is disjoint. The overlap converse gives $`Q\leq0`$.
 
-If $`1/2<r<1`$, instead use weights
+If $`1/2\lt r<1`$, instead use weights
 
 ```math
 1-r\quad(F/P_t),\qquad
